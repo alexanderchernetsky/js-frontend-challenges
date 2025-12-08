@@ -1,5 +1,5 @@
 import Controller from './controllers/TicTacToeController';
 
-const app = new Controller();
+const ticTacToeController = new Controller();
 
-app.run();
+ticTacToeController.run();
