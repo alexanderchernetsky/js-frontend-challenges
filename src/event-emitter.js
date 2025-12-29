@@ -1,3 +1,4 @@
+// Box technical challenge
 class EventEmitter {
     constructor() {
         this.events = {};
