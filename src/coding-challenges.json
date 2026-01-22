@@ -53,5 +53,11 @@
     "path": "src/pages/cat-rabbit-snail-game.html",
     "company": "Asana",
     "status": "todo"
+  },
+  {
+    "title": "Find Rectangle",
+    "description": "Given a 2D array of 0s and 1s, identify the coordinates of the single solid rectangle made of 1s.",
+    "path": "src/pages/findRectangle.html",
+    "company": "D3"
   }
 ]

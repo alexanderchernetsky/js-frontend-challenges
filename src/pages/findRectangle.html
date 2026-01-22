@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find rectangle JS challenge</title>
+</head>
+<body>
+    <nav><a href="../../index.html">&larr; Back to Home</a></nav>
+    <h1>Find Rectangle</h1>
+    <p>Given a 2D array of 0s and 1s, identify the coordinates of the single solid rectangle made of 1s.</p>
+
+    <div id="algo-container">
+        <!-- Problem will be rendered here -->
+    </div>
+
+    <style>
+        .problem {
+            margin-bottom: 40px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        h2 {
+            margin-top: 0;
+        }
+    </style>
+
+    <script type="module">
+        function parseAlgoFile(text) {
+            const lines = text.split('\n');
+            let task = '';
+            let solution = '';
+            let isSolution = false;
+
+            for (let line of lines) {
+                // Heuristic to find where the solution starts
+                if (line.toLowerCase().includes('function ') || line.toLowerCase().includes('const ') || line.toLowerCase().includes('let ')) {
+                   if (!line.trim().startsWith('//')) {
+                       isSolution = true;
+                   }
+                }
+
+                if (!isSolution) {
+                    if (line.trim().startsWith('//')) {
+                        task += line.replace(/^\/\/\s?/, '') + '\n';
+                    }
+                } else {
+                    if (!line.startsWith('const testInput')) {
+                        solution += line + '\n';
+                    } else {
+                        break;
+                    }
+                }
+            }
+            return { task: task.trim(), solution: solution.trim() };
+        }
+
+        async function loadProblem(url, title) {
+            const response = await fetch(url);
+            const text = await response.text();
+            const { task, solution } = parseAlgoFile(text);
+
+            const container = document.getElementById('algo-container');
+            const problemDiv = document.createElement('div');
+            problemDiv.className = 'problem';
+
+            const h2 = document.createElement('h2');
+            h2.textContent = title;
+            problemDiv.appendChild(h2);
+
+            const taskH3 = document.createElement('h3');
+            taskH3.textContent = 'Task';
+            problemDiv.appendChild(taskH3);
+
+            const taskP = document.createElement('p');
+            taskP.style.whiteSpace = 'pre-wrap';
+            taskP.textContent = task;
+            problemDiv.appendChild(taskP);
+
+            const solutionH3 = document.createElement('h3');
+            solutionH3.textContent = 'Solutions';
+            problemDiv.appendChild(solutionH3);
+
+            const pre = document.createElement('pre');
+            pre.textContent = solution;
+            problemDiv.appendChild(pre);
+
+            container.appendChild(problemDiv);
+        }
+
+        loadProblem('../../src/findRectangle.js', 'Find Rectangle');
+    </script>
+
+<script type="module" src="../../src/findRectangle.js"></script>
+</body>
+</html>
