@@ -59,5 +59,11 @@
     "description": "Given a 2D array of 0s and 1s, identify the coordinates of the single solid rectangle made of 1s.",
     "path": "src/pages/findRectangle.html",
     "company": "D3"
+  },
+  {
+    "title": "Observer Pattern",
+    "description": "Practice implementing the Observer design pattern. Create a subject that notifies multiple observers of state changes.",
+    "path": "src/pages/observer.html",
+    "company": "General"
   }
 ]
