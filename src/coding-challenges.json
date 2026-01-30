@@ -84,5 +84,11 @@
     "description": "Implementation of the Merge Sort algorithm, a divide-and-conquer approach to sorting arrays efficiently.",
     "path": "src/pages/merge-sort.html",
     "type": "Algorithms"
+  },
+  {
+    "title": "Decorator Pattern",
+    "description": "Implement withTiming and withCallCount functions that add measuring behavior without modifying logic.",
+    "path": "src/pages/decorator.html",
+    "type": "Design patterns"
   }
 ]
